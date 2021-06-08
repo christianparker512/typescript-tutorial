@@ -1,49 +1,38 @@
-// //const character = 'Christian';
-// let character = 'Christian';
-// let age = 50;
-// let isProgrammer = false;
-//
-// //character = 20;
-// character = 'parker';
-//
-// age = 30;
-//
-// isProgrammer = true;
-//
-// const circ = (diameter:number) => {
-//     return diameter * Math.PI
-// }
-//
-// console.log(circ(7.5));
-// console.log(character);
-//
-// const inputs = document.querySelectorAll('input');
-//
-// inputs.forEach(input => {
-//     console.log(input);
-// });
+//explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-let names = ['chris', 'parker', 'lisa'];
+//AGE cant be a string because we've declared it as a number
+// age = 'Christian';
+age = 50;
 
-names.push('abby');
 
-let numbers = [10,20,30,40];
-numbers.push(25);
+//isLoggedIn=25
+isLoggedIn = true;
 
-let mixed = ['baxter', 3, 'quincy', 8, 9];
-mixed.push('zeke');
-mixed.push(10);
-mixed[0] = 3;
-// the below will not compile due to them not being strings
-// names.push(3);
-// names.push[0];
+let ninjas: string[] = [];
+ninjas.push('chris')
 
-//Cant add new properties or change only a few
-let parkers = {
-    name: 'chris',
-    color: 'blue',
-    age: 50
+//union types
+let mixed: (string | number)[] = []
+mixed.push('hello');
+mixed.push('20');
+//error because boolean is mentioned but not number or string
+mixed.push(false);
+console.log(mixed);
+
+let uid: string|number;
+uid = '123';
+uid = 123;
+
+//objects
+let ninjaOne: object;
+ninjaOne = {name: 'chris', age: 50};
+
+let ninjaTwo: {
+    name: string,
+    age: number;
+    beltColor: string
 }
-parkers.age  = 40;
-parkers.name = 'vince';
-
+ninjaTwo = {name: 'abby', age: 19, beltColor: 'black'}
