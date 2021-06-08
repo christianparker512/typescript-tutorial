@@ -44,3 +44,6 @@ let parkers = {
     color: 'blue',
     age: 50
 }
+parkers.age  = 40;
+parkers.name = 'vince';
+
