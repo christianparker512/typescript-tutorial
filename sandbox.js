@@ -1,16 +1,18 @@
 "use strict";
-var greet;
-//greet = 'hello';
-greet = function () {
-    console.log('hello,again');
-};
-var add = function (a, b, c) {
-    if (c === void 0) { c = 10; }
-    console.log(a + b);
-    console.log(c);
-};
-add(5, 10, 20);
-var minus = function (a, b) {
-    return a + b;
-};
-// let result = minus(10,7);
+var anchor = document.querySelector('a');
+if (anchor) {
+    console.log(anchor.href);
+}
+console.log(anchor.href);
+//const form = document.querySelector('form')!;
+var form = document.querySelector('.new-item-form');
+console.log(form.children);
+// inputs
+var type = document.querySelector('#type');
+var tofrom = document.querySelector('#tofrom');
+var details = document.querySelector('#details');
+var amount = document.querySelector('#amount');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});
