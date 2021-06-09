@@ -1,26 +1,21 @@
+"use strict";
 // let greet: Function;
 // () => void
-
 //example1
-let greet: (a: string, b: string)=> void;
-greet = (name: string, greeting: string) =>{
+var greet;
+greet = function (name, greeting) {
     console.log('${name} says ${greeting}');
-}
-
-let calc: (a: number, b: number, c: string) => number;
-
-calc = (numOne: number, numTwo: number, action: string) => {
-    if(action ==='add'){
+};
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
         return numOne + numTwo;
-    } else {
+    }
+    else {
         return numOne - numTwo;
     }
-}
-
-let logDetails: (obj: {name: string, age: number}) => void;
-
-type person = {name: string, age: number};
-
-logDetails = (ninja: {name: string, age: number}) => {
+};
+var logDetails;
+logDetails = function (ninja) {
     console.log('${ninja.name} is ${ninja.age} years old');
-}
+};
