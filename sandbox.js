@@ -1,18 +1,21 @@
 "use strict";
-var anchor = document.querySelector('a');
-if (anchor) {
-    console.log(anchor.href);
-}
-console.log(anchor.href);
-//const form = document.querySelector('form')!;
-var form = document.querySelector('.new-item-form');
-console.log(form.children);
-// inputs
-var type = document.querySelector('#type');
-var tofrom = document.querySelector('#tofrom');
-var details = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+// let greet: Function;
+// () => void
+//example1
+var greet;
+greet = function (name, greeting) {
+    console.log('${name} says ${greeting}');
+};
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+var logDetails;
+logDetails = function (ninja) {
+    console.log('${ninja.name} is ${ninja.age} years old');
+};
