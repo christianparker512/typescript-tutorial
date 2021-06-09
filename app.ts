@@ -1,19 +1,34 @@
-// classes
-import {Invoice}
-    from './classes/Invoice.js'
+import { Invoice } from './classes/Invoice.js';
 
-const invOne = new Invoice('chris', 'work on the Chris website', 250);
-const invTwo = new Invoice('lisa', 'work on the Lisa website', 300);
+// interfaces
+export interface IsPerson {
+  name: string;
+  age?: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
 
-let invoices: Invoice[] = [];
-invoices.push(invOne)
-invoices.push(invTwo);
+const me: IsPerson = {
+  name: 'shaun',
+  //age: 30,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    console.log('I spent ', amount);
+    return amount;
+  },
+};
 
-invoices.forEach(inv => {
-    console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
-})
+console.log(me);
+me.speak('hello, world');
 
+const greetPerson = (person: IsPerson): void => {
+  console.log('hello ', person.name);
+}
 
+greetPerson(me);
+//greetPerson({name: 'shaun'});
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 console.log(form.children);
@@ -25,13 +40,12 @@ const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e: Event) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    console.log(
-        type.value,
-        tofrom.value,
-        details.value,
-        amount.valueAsNumber
-    );
+  console.log(
+    type.value, 
+    tofrom.value, 
+    details.value, 
+    amount.valueAsNumber
+  );
 });
-
